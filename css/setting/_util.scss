@@ -1,0 +1,41 @@
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background: $color;
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+}
+
+.d {
+  &-none {
+    display: none;
+  }
+  &-block {
+    display: block;
+  }
+  &-flex {
+    display: flex;
+  }
+}
+.jc {
+  &-center {
+    justify-content: center;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+}
+.ai {
+  &-center {
+    align-items: center;
+  }
+}
+.fw {
+  &-bold {
+    font-weight: bold;
+  }
+}
+.w-100 {
+  width: 100%;
+}

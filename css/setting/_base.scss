@@ -1,0 +1,25 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: url(https://hexschool.github.io/js-filter/assets/bg.jpg);
+  background-size: cover;
+}
+a {
+  text-decoration: none;
+  color: $dark;
+}
+button {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+}

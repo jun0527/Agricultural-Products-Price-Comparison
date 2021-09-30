@@ -1,0 +1,492 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.bg-#FFFFFF {
+  background: #FFFFFF;
+}
+
+.text-#FFFFFF {
+  color: #FFFFFF;
+}
+
+.bg-#2A2A2A {
+  background: #2A2A2A;
+}
+
+.text-#2A2A2A {
+  color: #2A2A2A;
+}
+
+.bg-#899E39 {
+  background: #899E39;
+}
+
+.text-#899E39 {
+  color: #899E39;
+}
+
+.bg-#F8D45A {
+  background: #F8D45A;
+}
+
+.text-#F8D45A {
+  color: #F8D45A;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.jc-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.jc-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.ai-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: url(https://hexschool.github.io/js-filter/assets/bg.jpg);
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: #2A2A2A;
+}
+
+button {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 944px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.header {
+  padding: 24px 0 24px 0;
+}
+
+.header a {
+  display: block;
+  white-space: nowrap;
+  text-indent: 101%;
+  overflow: hidden;
+  background: url(https://firebasestorage.googleapis.com/v0/b/hexschool-courses.appspot.com/o/course%2FJS%20%E5%89%8D%E7%AB%AF%E4%BF%AE%E7%B7%B4%E5%85%A8%E6%94%BB%E7%95%A5%2F1628942714013-logo%20%E6%94%B9.png?alt=media&token=583e78ed-6a6c-4660-9f0e-2f59f8eb78e2);
+  width: 450px;
+  height: 105px;
+}
+
+@media (max-width: 568px) {
+  .header a {
+    background: url(https://firebasestorage.googleapis.com/v0/b/hexschool-courses.appspot.com/o/course%2FJS%20%E5%89%8D%E7%AB%AF%E4%BF%AE%E7%B7%B4%E5%85%A8%E6%94%BB%E7%95%A5%2F1629001163643-logo-sm.png?alt=media&token=914f40fc-c143-4aaa-a1c3-fb0bdd17fa9c);
+    width: 178px;
+    height: 50px;
+    margin: 0 auto;
+  }
+}
+
+.priceComparison {
+  position: relative;
+  height: 600px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 0 3px #F8D45A, 0 0 0 8px #FFFCEF, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 0 3px #F8D45A, 0 0 0 8px #FFFCEF, 0 2px 20px 0 rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 69px;
+}
+
+@media (max-width: 568px) {
+  .priceComparison {
+    padding: 16px 12px;
+  }
+}
+
+.typeBtnArea {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 568px) {
+  .typeBtnArea {
+    margin-bottom: 8px;
+  }
+}
+
+.typeBtnArea li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media (max-width: 568px) {
+  .typeBtnArea li {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+}
+
+.typeBtnArea button {
+  background: #FFFFFF;
+  padding: 8px 40px;
+  -webkit-box-shadow: 0 1px 0 0 #2A2A2A;
+          box-shadow: 0 1px 0 0 #2A2A2A;
+  border: 2px solid #2A2A2A;
+}
+
+.typeBtnArea button:hover {
+  background: #F8D45A;
+}
+
+.typeBtnArea button.active {
+  background: #F8D45A;
+}
+
+@media (max-width: 568px) {
+  .typeBtnArea button {
+    padding: 8px 32px;
+  }
+}
+
+.searchArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 568px) {
+  .searchArea {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 568px) {
+  .searchArea .searchInputArea {
+    margin-bottom: 8px;
+  }
+}
+
+.searchArea span {
+  background: #899E39;
+  color: #FFFFFF;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border-radius: 4px 0 0 4px;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.searchArea input {
+  height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 8px 16px;
+  border: 2px solid #899E39;
+  border-radius: 0 4px 4px 0;
+  margin-right: 12px;
+}
+
+@media (max-width: 768px) {
+  .searchArea input {
+    width: 220px;
+  }
+}
+
+@media (max-width: 568px) {
+  .searchArea input {
+    min-width: 175px;
+    margin-right: 0;
+  }
+}
+
+.searchArea button {
+  background: #899E39;
+  color: #FFFFFF;
+  padding: 8px 54px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .searchArea button {
+    padding: 8px 40px;
+  }
+}
+
+@media (max-width: 568px) {
+  .searchArea button {
+    width: 100%;
+  }
+}
+
+.keyWordTxt {
+  min-width: 50%;
+  height: 24px;
+}
+
+.filterSortArea {
+  position: relative;
+}
+
+@media (max-width: 568px) {
+  .filterSortArea {
+    position: absolute;
+    bottom: -56px;
+    right: 0;
+  }
+}
+
+.filterSortArea button {
+  width: 141px;
+  height: 40px;
+  background: #FFFFFF;
+  font-weight: 400;
+  padding: 8px 4px 8px 12px;
+  border: 1px solid #9A9A9A;
+}
+
+@media (max-width: 568px) {
+  .filterSortArea button {
+    width: 92px;
+    border-radius: 20px;
+  }
+}
+
+.filterSortArea button:disabled {
+  cursor: no-drop;
+}
+
+.filterSortArea ul {
+  position: absolute;
+  top: 40px;
+  width: 141px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 568px) {
+  .filterSortArea ul {
+    width: 92px;
+    top: auto;
+    bottom: 40px;
+  }
+}
+
+.filterSortArea li {
+  border: 1px solid #D9D9D9;
+}
+
+.filterSortArea li:hover {
+  background: #F4F1EA;
+}
+
+.filterSortArea a {
+  display: block;
+  padding: 8px 16px;
+}
+
+.filterSortArea .pcType {
+  display: block;
+}
+
+@media (max-width: 568px) {
+  .filterSortArea .pcType {
+    display: none;
+  }
+}
+
+.filterSortArea .mobileType {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  .filterSortArea .mobileType {
+    display: block;
+  }
+}
+
+.priceComparisonTableArea {
+  margin-top: 20px;
+}
+
+@media (max-width: 568px) {
+  .priceComparisonTableArea {
+    margin-top: 16.5px;
+  }
+}
+
+.priceComparisonTable .pcTypeTitle {
+  display: table;
+}
+
+@media (max-width: 568px) {
+  .priceComparisonTable .pcTypeTitle {
+    display: none;
+  }
+}
+
+.priceComparisonTable .mobileTypeTitle {
+  display: none;
+}
+
+@media (max-width: 568px) {
+  .priceComparisonTable .mobileTypeTitle {
+    display: table;
+  }
+}
+
+.priceComparisonTable th, .priceComparisonTable td {
+  padding: 12px 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media (max-width: 568px) {
+  .priceComparisonTable th, .priceComparisonTable td {
+    font-size: 12px;
+  }
+}
+
+.priceComparisonTable .notSearch {
+  padding: 21px 0;
+}
+
+.priceComparisonTable th {
+  font-weight: bold;
+  background: #F4F1EA;
+  border-top: 2px solid #2A2A2A;
+  border-bottom: 2px solid #2A2A2A;
+}
+
+.priceComparisonTable td {
+  border-bottom: 2px solid #D9D9D9;
+}
+
+.priceComparisonTable tbody {
+  display: block;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.priceComparisonTable tbody::-webkit-scrollbar-track {
+  background-color: #c7c6c4;
+}
+
+.priceComparisonTable tbody::-webkit-scrollbar {
+  width: 5px;
+  background-color: black;
+}
+
+.priceComparisonTable tbody::-webkit-scrollbar-thumb {
+  background-color: #818181;
+}
+
+.priceComparisonTable tr {
+  width: 100%;
+  display: table;
+}
+/*# sourceMappingURL=all.css.map */

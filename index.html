@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produce 農產品比價網</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+  <header class="header container">
+    <h1><a href="index.scss">Produce 農產品比價網</a></h1>
+  </header>
+  <main class="container">
+    <section class="priceComparison">
+      <ul class="js-typeBtnArea typeBtnArea d-flex jc-center">
+        <li>
+          <button class="active" data-typeCode="N04" type="button">蔬果</button>
+        </li>
+        <li>
+          <button data-typeCode="N05" type="button">水果</button>
+        </li>
+        <li>
+          <button data-typeCode="N06" type="button">花卉</button>
+        </li>
+      </ul>
+      <div class="searchArea">
+        <div class="searchInputArea d-flex">
+          <span>作物名稱</span>
+          <input class="js-search" type="text" placeholder="請輸入作物名稱">
+        </div>
+        <button class="js-searchBtn" type="button">搜尋</button>
+      </div>
+      <div class="d-flex jc-between ai-center">
+        <p class="js-keyWordTxt keyWordTxt fw-bold"></p>
+        <div class="filterSortArea">
+          <button data-btn="filterSortBtn" class="js-filterSortBtn d-flex jc-between ai-center" type="button" disabled>
+            <span class="js-filterSortTxt pcType">排序篩選</span>
+            <span class="js-filterSortTxt mobileType">排序</span>
+            <span class="pcType material-icons">
+              arrow_drop_down
+            </span>
+            <span class="mobileType material-icons">
+              unfold_more
+            </span>
+          </button>
+          <ul class="js-filterSortList d-none">
+            <li data-sort="上價"><a class="pcType" href="javascript:;">依上價排序</a><a class="mobileType" href="javascript:;">上價</a></li>
+            <li data-sort="中價"><a class="pcType" href="javascript:;">依中價排序</a><a class="mobileType" href="javascript:;">中價</a></li>
+            <li data-sort="下價"><a class="pcType" href="javascript:;">依下價排序</a><a class="mobileType" href="javascript:;">下價</a></li>
+            <li data-sort="平均價"><a class="pcType" href="javascript:;">依平均價排序</a><a class="mobileType" href="javascript:;">平均價</a></li>
+            <li data-sort="交易量"><a class="pcType" href="javascript:;">依交易量排序</a><a class="mobileType" href="javascript:;">交易量</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="priceComparisonTableArea">
+        <table class="priceComparisonTable w-100">
+          <thead>
+            <tr class="pcTypeTitle">
+              <th width="15%">作物名稱</th>
+              <th width="15%">市場名稱</th>
+              <th width="14%">上價</th>
+              <th width="14%">中價</th>
+              <th width="14%">下價</th>
+              <th width="14%">平均價</th>
+              <th width="14%">交易量</th>
+            </tr>
+            <tr class="mobileTypeTitle">
+              <th width="15%">作物</th>
+              <th width="15%">市場</th>
+              <th width="14%">上價</th>
+              <th width="14%">中價</th>
+              <th width="14%">下價</th>
+              <th width="14%">平均價</th>
+              <th width="14%">交易量</th>
+            </tr>
+          </thead>
+          <tbody class="js-resultArea">
+            <tr>
+              <td class="notSearch" colspan="7">請輸入並搜尋想比價的作物名稱^＿^</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/all.js"></script>
+</body>
+</html>

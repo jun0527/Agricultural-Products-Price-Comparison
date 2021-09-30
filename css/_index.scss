@@ -1,0 +1,234 @@
+.container {
+  max-width: 944px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+.header {
+  padding: 24px 0 24px 0;
+  a {
+    display: block;
+    white-space: nowrap;
+    text-indent: 101%;
+    overflow: hidden;
+    background: url(https://firebasestorage.googleapis.com/v0/b/hexschool-courses.appspot.com/o/course%2FJS%20%E5%89%8D%E7%AB%AF%E4%BF%AE%E7%B7%B4%E5%85%A8%E6%94%BB%E7%95%A5%2F1628942714013-logo%20%E6%94%B9.png?alt=media&token=583e78ed-6a6c-4660-9f0e-2f59f8eb78e2);
+    width: 450px;
+    height: 105px;
+    @include mobile {
+      background: url(https://firebasestorage.googleapis.com/v0/b/hexschool-courses.appspot.com/o/course%2FJS%20%E5%89%8D%E7%AB%AF%E4%BF%AE%E7%B7%B4%E5%85%A8%E6%94%BB%E7%95%A5%2F1629001163643-logo-sm.png?alt=media&token=914f40fc-c143-4aaa-a1c3-fb0bdd17fa9c);
+      width: 178px;
+      height: 50px;
+      margin: 0 auto;
+    }
+  }
+}
+.priceComparison {
+  position: relative;
+  height: 600px;
+  background: $white;
+  box-shadow: 0 0 0 3px #F8D45A, 0 0 0 8px #FFFCEF, 0 2px 20px 0 rgba(0,0,0,0.15);
+  padding: 40px;
+  border-radius: 8px;
+  margin-bottom: 69px;
+  @include mobile {
+    padding: 16px 12px;
+  }
+}
+.typeBtnArea {
+  margin-bottom: 20px;
+  @include mobile {
+    margin-bottom: 8px;
+  }
+  li {
+    margin-left: 5px;
+    margin-right: 5px;
+    @include mobile {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+  }
+  button {
+    background: $white;
+    padding: 8px 40px;
+    box-shadow: 0 1px 0 0 #2A2A2A;
+    border: 2px solid $dark;
+    &:hover {
+      background: $secondary;
+    }
+    &.active {
+      background: $secondary;
+    }
+    @include mobile {
+      padding: 8px 32px;
+    }
+  }
+}
+.searchArea {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  @include mobile {
+    display: block;
+    margin-bottom: 16px;
+  }
+  .searchInputArea {
+    @include mobile {
+      margin-bottom: 8px;
+    }
+  }
+  span {
+    background: $primary;
+    color: $white;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-radius: 4px 0 0 4px;
+    flex-grow: 0;
+  }
+  input {
+    height: 40px;
+    flex-grow: 1;
+    padding: 8px 16px;
+    border: 2px solid $primary;
+    border-radius: 0 4px 4px 0;
+    margin-right: 12px;
+    @include pad {
+      width: 220px;
+    }
+    @include mobile {
+      min-width: 175px;
+      margin-right: 0;
+    }
+  }
+  button {
+    background: $primary;
+    color: $white;
+    padding: 8px 54px;
+    border: none;
+    @include pad {
+      padding: 8px 40px;
+    }
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+.keyWordTxt {
+  min-width: 50%;
+  height: 24px;
+}
+.filterSortArea {
+  position: relative;
+  @include mobile {
+    position: absolute;
+    bottom: -56px;
+    right: 0;
+  }
+  button {
+    width: 141px;
+    height: 40px;
+    background: $white;
+    font-weight: 400;
+    padding: 8px 4px 8px 12px;
+    border: 1px solid #9A9A9A;
+    @include mobile {
+      width: 92px;
+      border-radius: 20px;
+    }
+    &:disabled {
+      cursor: no-drop;
+    }
+  }
+  ul {
+    position: absolute;
+    top: 40px;
+    width: 141px;
+    background: $white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.15);
+    @include mobile {
+      width: 92px;
+      top: auto;
+      bottom: 40px;
+    }
+  }
+  li {
+    border: 1px solid #D9D9D9;
+    &:hover {
+      background: #F4F1EA;
+    }
+  }
+  a {
+    display: block;
+    padding: 8px 16px;
+  }
+  .pcType {
+    display: block;
+    @include mobile {
+      display: none;
+    }
+  }
+  .mobileType {
+    display: none;
+    @include mobile {
+      display: block;
+    }
+  }
+}
+.priceComparisonTableArea {
+  margin-top: 20px;
+  @include mobile {
+    margin-top: 16.5px;
+  }
+}
+.priceComparisonTable {
+  .pcTypeTitle {
+    display: table;
+    @include mobile {
+      display: none;
+    }
+  }
+  .mobileTypeTitle {
+    display: none;
+    @include mobile {
+      display: table;
+    }
+  }
+  th, td {
+    padding: 12px 0;
+    text-align: center;
+    vertical-align: middle;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  .notSearch {
+    padding: 21px 0;
+  }
+  th {
+    font-weight: bold;
+    background: #F4F1EA;
+    border-top: 2px solid $dark;
+    border-bottom: 2px solid $dark;
+  }
+  td {
+    border-bottom: 2px solid #D9D9D9;
+  }
+  tbody {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    //卷軸樣式
+    &::-webkit-scrollbar-track {
+      background-color: #c7c6c4;
+    }
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: black;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #818181;
+    }
+  }
+  tr {
+    width: 100%;
+    display: table;
+  }
+}
