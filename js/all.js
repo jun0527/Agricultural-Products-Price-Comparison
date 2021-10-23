@@ -6,6 +6,7 @@ const resultArea = document.querySelector('.js-resultArea');
 const sortBtn = document.querySelector('.js-filterSortBtn');
 const sortList = document.querySelector('.js-filterSortList');
 const filterSortTxt = document.querySelectorAll('.js-filterSortTxt');
+const listThead = document.querySelector('.js-listThead');
 
 //變數初始值
 let url = 'https://hexschool.github.io/js-filter-data/data.json';
@@ -15,14 +16,20 @@ let data = [];
 let resultArr = [];
 let sortListOpen = false;
 
+function init() {
+  getData();
+}
+init();
 //種類按鈕切換
 typeBtnList.forEach((item) => {
   item.addEventListener('click', (e) => {
     typeBtnList.forEach((item) => {
-      item.setAttribute('class', '');
+      // item.setAttribute('class', '');
+      item.classList.remove('active');
     })
     typeCode = item.getAttribute('data-typeCode');
-    item.setAttribute('class', 'active');
+    // item.setAttribute('class', 'active');
+      item.classList.add('active');
   })
 })
 //取得價格資料
@@ -30,7 +37,11 @@ function getData() {
   axios.get(url)
   .then((res) => {
     data = res.data;
-    resultArr = data.filter((item) => item['種類代碼'] === typeCode && item['作物名稱'].indexOf(keyWord) !== -1);
+    })
+}
+//篩選需要的資料
+function filterData() {
+  resultArr = data.filter((item) => item['種類代碼'] === typeCode && item['作物名稱'].indexOf(keyWord) !== -1);
     switch (resultArr.length) {
       case 0:
         sortBtn.disabled = true;
@@ -39,15 +50,28 @@ function getData() {
         sortBtn.disabled = false;
         break;
     }
-    renderResult();
-    })
+  renderResult();
 }
-
 //搜尋關鍵字功能
-searchBtn.addEventListener('click', () => {
-  keyWord = search.value;
-  getData();
-})
+searchBtn.addEventListener('click', searchList);
+search.addEventListener('keydown', (e) => {
+  switch (e.keyCode) {
+    case 13:
+      searchList();
+      break;
+  }
+});
+function searchList() {
+  keyWord = search.value.trim();
+  switch (keyWord) {
+    case '':
+      alert('作物名稱不得空白！');
+      break;
+    default:
+      filterData();
+      break;
+  }
+}
 
 //渲染搜尋結果
 function renderResult() {
@@ -79,13 +103,15 @@ function renderResult() {
 sortBtn.addEventListener('click', (e) => {
   switch (sortListOpen) {
     case true:
-      sortList.setAttribute('class', 'js-filterSortList d-none');
+      // sortList.setAttribute('class', 'js-filterSortList d-none');
+      sortList.classList.add('d-none');
       window.removeEventListener('click', closeSortList);
       break;
       case false:
-        sortList.setAttribute('class', 'js-filterSortList');
+        // sortList.setAttribute('class', 'js-filterSortList');
+        sortList.classList.remove('d-none');
         window.addEventListener('click', closeSortList);
-        sortList.addEventListener('click', renderSortList);
+        sortList.addEventListener('click', changeSort);
         break;
       }
       sortListOpen = !sortListOpen;
@@ -96,18 +122,22 @@ function closeSortList(e) {
     case true:
       switch (sortListOpen) {
         case true:
-          sortList.setAttribute('class', 'js-filterSortList d-none');
+          // sortList.setAttribute('class', 'js-filterSortList d-none');
+          sortList.classList.add('d-none');
           sortListOpen = false;
       }
       window.removeEventListener('click', closeSortList);
       break;
   }
 }
-function renderSortList(e) {
+function changeSort(e) {
   let sortStatus = e.target.closest('li').dataset.sort;
   let sortStatusTxt = e.target.closest('a').textContent;
+  renderSelectTxt(sortStatus, sortStatusTxt);
+}
+function renderSelectTxt(sortStatus, txt) {
   filterSortTxt.forEach((item) => {
-    item.textContent = sortStatusTxt;
+    item.textContent = txt;
   })
   sort(sortStatus);
   renderResult();
@@ -130,6 +160,26 @@ function sort(status) {
         numB = b[status];
         return numA - numB;
       })
+      break;
+  }
+}
+
+//按表頭來切換排序
+listThead.addEventListener('click', theadChangeSort);
+function theadChangeSort(e) {
+  switch (resultArr.length) {
+    case 0:
+      break;
+    default:
+      let sortStatus = e.target.closest('th').dataset.sort;
+      let sortStatusTxt = e.target.closest('th').dataset.statusTxt;
+      switch (sortStatus) {
+        case undefined:
+          break;
+        default:
+          renderSelectTxt(sortStatus, sortStatusTxt);
+          break;
+      }
       break;
   }
 }
