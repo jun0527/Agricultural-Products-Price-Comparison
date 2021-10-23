@@ -59,15 +59,50 @@
       </div>
       <div class="priceComparisonTableArea">
         <table class="priceComparisonTable w-100">
-          <thead>
+          <thead class="js-listThead">
             <tr class="pcTypeTitle">
               <th width="15%">作物名稱</th>
               <th width="15%">市場名稱</th>
-              <th width="14%">上價</th>
-              <th width="14%">中價</th>
-              <th width="14%">下價</th>
-              <th width="14%">平均價</th>
-              <th width="14%">交易量</th>
+              <th class="sortBtn" data-sort="上價" data-status-txt="依上價排序" width="14%">
+                <div class="d-flex jc-center">
+                  <p>上價</p>
+                  <span class="mobileType material-icons">
+                    unfold_more
+                  </span>
+                </div>
+              </th>
+              <th class="sortBtn" data-sort="中價" data-status-txt="依中價排序" width="14%">
+                <div class="d-flex jc-center">
+                  <p>中價</p>
+                  <span class="mobileType material-icons">
+                    unfold_more
+                  </span>
+                </div>
+              </th>
+              <th class="sortBtn" data-sort="下價" data-status-txt="依下價排序" width="14%">
+                <div class="d-flex jc-center">
+                  <p>下價</p>
+                  <span class="mobileType material-icons">
+                    unfold_more
+                  </span>
+                </div>
+              </th>
+              <th class="sortBtn" data-sort="平均價" data-status-txt="依平均價排序" width="14%">
+                <div class="d-flex jc-center">
+                  <p>平均價</p>
+                  <span class="mobileType material-icons">
+                    unfold_more
+                  </span>
+                </div>
+              </th>
+              <th class="sortBtn" data-sort="交易量" data-status-txt="依交易量排序" width="14%">
+                <div class="d-flex jc-center">
+                  <p>交易量</p>
+                  <span class="mobileType material-icons">
+                    unfold_more
+                  </span>
+                </div>
+              </th>
             </tr>
             <tr class="mobileTypeTitle">
               <th width="15%">作物</th>

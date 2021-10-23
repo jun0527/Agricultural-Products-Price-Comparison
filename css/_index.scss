@@ -198,6 +198,9 @@
     @include mobile {
       font-size: 12px;
     }
+    &.sortBtn {
+      cursor: pointer;
+    }
   }
   .notSearch {
     padding: 21px 0;

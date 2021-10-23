@@ -451,6 +451,10 @@ input {
   }
 }
 
+.priceComparisonTable th.sortBtn, .priceComparisonTable td.sortBtn {
+  cursor: pointer;
+}
+
 .priceComparisonTable .notSearch {
   padding: 21px 0;
 }
