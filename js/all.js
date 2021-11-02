@@ -10,11 +10,14 @@ const listThead = document.querySelector('.js-listThead');
 
 //變數初始值
 let url = 'https://hexschool.github.io/js-filter-data/data.json';
-let typeCode = 'N04';
+let typeCode = '';
+let typeName = '';
 let keyWord = '';
 let data = [];
 let resultArr = [];
 let sortListOpen = false;
+let sortName = '';
+let sorting = '';
 
 function init() {
   getData();
@@ -24,12 +27,12 @@ init();
 typeBtnList.forEach((item) => {
   item.addEventListener('click', (e) => {
     typeBtnList.forEach((item) => {
-      // item.setAttribute('class', '');
       item.classList.remove('active');
     })
     typeCode = item.getAttribute('data-typeCode');
-    // item.setAttribute('class', 'active');
-      item.classList.add('active');
+    typeName = item.textContent;
+    item.classList.add('active');
+    filterData();
   })
 })
 //取得價格資料
@@ -71,6 +74,8 @@ function searchList() {
       filterData();
       break;
   }
+  keyWord = '';
+  search.value = keyWord;
 }
 
 //渲染搜尋結果
@@ -96,7 +101,16 @@ function renderResult() {
       })
       break;
   }
-  keyWordTxt.innerHTML = `查看「${keyWord}」的比價結果`;
+  let searchTxt;
+  switch (keyWord) {
+    case '':
+      searchTxt = `${typeName}`;
+      break;
+    default:
+      searchTxt = `${typeName}、${keyWord}`;
+      break;
+  }
+  keyWordTxt.innerHTML = `查看「${searchTxt}」的比價結果`;
   resultArea.innerHTML = str;
 }
 //排序篩選下拉選單開關
@@ -131,33 +145,48 @@ function closeSortList(e) {
   }
 }
 function changeSort(e) {
-  let sortStatus = e.target.closest('li').dataset.sort;
+  switch(e.target.closest('li').dataset.sort) {
+    case sortName:
+      switch (sorting) {
+        case 'up':
+          sorting = 'down';
+          break;
+        case 'down':
+          sorting = 'up';
+          break;
+      }
+      break;
+    default:
+      sorting = 'up';
+      break;
+  }
+  sortName = e.target.closest('li').dataset.sort;
   let sortStatusTxt = e.target.closest('a').textContent;
-  renderSelectTxt(sortStatus, sortStatusTxt);
+  renderSelectTxt(sortStatusTxt);
 }
-function renderSelectTxt(sortStatus, txt) {
+function renderSelectTxt(txt) {
   filterSortTxt.forEach((item) => {
     item.textContent = txt;
   })
-  sort(sortStatus);
+  sort();
   renderResult();
 }
 //排序功能
-function sort(status) {
-  switch (status) {
+function sort() {
+  switch (sorting) {
     //依交易量排序為降幕
-    case '交易量':
+    case 'down':
       resultArr.sort((a, b) => {
-        numA = a[status];
-        numB = b[status];
+        numA = a[sortName];
+        numB = b[sortName];
         return numB - numA;
       })
       break;
-    default:
+    case 'up':
       //依交易量排序以外的排序為升幕
       resultArr.sort((a, b) => {
-        numA = a[status];
-        numB = b[status];
+        numA = a[sortName];
+        numB = b[sortName];
         return numA - numB;
       })
       break;
@@ -167,17 +196,18 @@ function sort(status) {
 //按表頭來切換排序
 listThead.addEventListener('click', theadChangeSort);
 function theadChangeSort(e) {
-  switch (resultArr.length) {
-    case 0:
+  switch(e.target.closest('button')) {
+    case null:
       break;
     default:
-      let sortStatus = e.target.closest('th').dataset.sort;
-      let sortStatusTxt = e.target.closest('th').dataset.statusTxt;
-      switch (sortStatus) {
-        case undefined:
+      switch (resultArr.length) {
+        case 0:
           break;
         default:
-          renderSelectTxt(sortStatus, sortStatusTxt);
+          sortName = e.target.closest('th').dataset.sort;
+          let sortStatusTxt = e.target.closest('th').dataset.statusTxt;
+          sorting = e.target.closest('button').dataset.sortStatus;
+          renderSelectTxt(sortStatusTxt);
           break;
       }
       break;
