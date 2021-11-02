@@ -98,6 +98,13 @@ table {
   display: flex;
 }
 
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .jc-center {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -148,6 +155,8 @@ button {
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 input {
@@ -451,10 +460,6 @@ input {
   }
 }
 
-.priceComparisonTable th.sortBtn, .priceComparisonTable td.sortBtn {
-  cursor: pointer;
-}
-
 .priceComparisonTable .notSearch {
   padding: 21px 0;
 }
@@ -492,5 +497,21 @@ input {
 .priceComparisonTable tr {
   width: 100%;
   display: table;
+}
+
+.upAndDownSort button {
+  height: 10px;
+  background: none;
+  border: none;
+  overflow-y: hidden;
+}
+
+.upAndDownSort button:hover {
+  opacity: 0.5;
+}
+
+.upAndDownSort span {
+  font-size: 26px;
+  margin-top: -7px;
 }
 /*# sourceMappingURL=all.css.map */

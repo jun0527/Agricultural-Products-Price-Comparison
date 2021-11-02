@@ -19,7 +19,7 @@
     <section class="priceComparison">
       <ul class="js-typeBtnArea typeBtnArea d-flex jc-center">
         <li>
-          <button class="active" data-typeCode="N04" type="button">蔬果</button>
+          <button data-typeCode="N04" type="button">蔬果</button>
         </li>
         <li>
           <button data-typeCode="N05" type="button">水果</button>
@@ -63,44 +63,89 @@
             <tr class="pcTypeTitle">
               <th width="15%">作物名稱</th>
               <th width="15%">市場名稱</th>
-              <th class="sortBtn" data-sort="上價" data-status-txt="依上價排序" width="14%">
-                <div class="d-flex jc-center">
+              <th data-sort="上價" data-status-txt="依上價排序" width="14%">
+                <div class="d-flex jc-center ai-center">
                   <p>上價</p>
-                  <span class="mobileType material-icons">
-                    unfold_more
-                  </span>
+                  <div class="upAndDownSort d-flex flex-column">
+                    <button data-sort-status="up">
+                      <span class="d-block material-icons">
+                        arrow_drop_up
+                      </span>
+                    </button>
+                    <button data-sort-status="down">
+                      <span class="d-block material-icons">
+                        arrow_drop_down
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </th>
-              <th class="sortBtn" data-sort="中價" data-status-txt="依中價排序" width="14%">
-                <div class="d-flex jc-center">
+              <th data-sort="中價" data-status-txt="依中價排序" width="14%">
+                <div class="d-flex jc-center ai-center">
                   <p>中價</p>
-                  <span class="mobileType material-icons">
-                    unfold_more
-                  </span>
+                  <div class="upAndDownSort d-flex flex-column">
+                    <button data-sort-status="up">
+                      <span class="d-block material-icons">
+                        arrow_drop_up
+                      </span>
+                    </button>
+                    <button data-sort-status="down">
+                      <span class="d-block material-icons">
+                        arrow_drop_down
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </th>
-              <th class="sortBtn" data-sort="下價" data-status-txt="依下價排序" width="14%">
-                <div class="d-flex jc-center">
+              <th data-sort="下價" data-status-txt="依下價排序" width="14%">
+                <div class="d-flex jc-center ai-center">
                   <p>下價</p>
-                  <span class="mobileType material-icons">
-                    unfold_more
-                  </span>
+                  <div class="upAndDownSort d-flex flex-column">
+                    <button data-sort-status="up">
+                      <span class="d-block material-icons">
+                        arrow_drop_up
+                      </span>
+                    </button>
+                    <button data-sort-status="down">
+                      <span class="d-block material-icons">
+                        arrow_drop_down
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </th>
-              <th class="sortBtn" data-sort="平均價" data-status-txt="依平均價排序" width="14%">
-                <div class="d-flex jc-center">
+              <th data-sort="平均價" data-status-txt="依平均價排序" width="14%">
+                <div class="d-flex jc-center ai-center">
                   <p>平均價</p>
-                  <span class="mobileType material-icons">
-                    unfold_more
-                  </span>
+                  <div class="upAndDownSort d-flex flex-column">
+                    <button data-sort-status="up">
+                      <span class="d-block material-icons">
+                        arrow_drop_up
+                      </span>
+                    </button>
+                    <button data-sort-status="down">
+                      <span class="d-block material-icons">
+                        arrow_drop_down
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </th>
-              <th class="sortBtn" data-sort="交易量" data-status-txt="依交易量排序" width="14%">
-                <div class="d-flex jc-center">
+              <th data-sort="交易量" data-status-txt="依交易量排序" width="14%">
+                <div class="d-flex jc-center ai-center">
                   <p>交易量</p>
-                  <span class="mobileType material-icons">
-                    unfold_more
-                  </span>
+                  <div class="upAndDownSort d-flex flex-column">
+                    <button data-sort-status="up">
+                      <span class="d-block material-icons">
+                        arrow_drop_up
+                      </span>
+                    </button>
+                    <button data-sort-status="down">
+                      <span class="d-block material-icons">
+                        arrow_drop_down
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </th>
             </tr>

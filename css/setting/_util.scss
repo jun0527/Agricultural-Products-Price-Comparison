@@ -18,6 +18,11 @@
     display: flex;
   }
 }
+.flex {
+  &-column {
+    flex-direction: column;
+  }
+}
 .jc {
   &-center {
     justify-content: center;

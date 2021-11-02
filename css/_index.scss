@@ -198,9 +198,6 @@
     @include mobile {
       font-size: 12px;
     }
-    &.sortBtn {
-      cursor: pointer;
-    }
   }
   .notSearch {
     padding: 21px 0;
@@ -233,5 +230,20 @@
   tr {
     width: 100%;
     display: table;
+  }
+}
+.upAndDownSort {
+  button {
+    height: 10px;
+    background: none;
+    border: none;
+    overflow-y: hidden;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  span {
+    font-size: 26px;
+    margin-top: -7px;
   }
 }
