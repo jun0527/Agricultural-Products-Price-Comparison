@@ -174,7 +174,7 @@ function renderSelectTxt(txt) {
 //排序功能
 function sort() {
   switch (sorting) {
-    //依交易量排序為降幕
+    //降幕
     case 'down':
       resultArr.sort((a, b) => {
         numA = a[sortName];
@@ -183,7 +183,7 @@ function sort() {
       })
       break;
     case 'up':
-      //依交易量排序以外的排序為升幕
+      //升幕
       resultArr.sort((a, b) => {
         numA = a[sortName];
         numB = b[sortName];
